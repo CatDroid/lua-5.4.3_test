@@ -7,6 +7,9 @@ extern "C"
 }
 
 #include <iostream>
+
+#include "demo_select.h"
+
 using namespace std;
 
 int n = 0;
@@ -27,7 +30,11 @@ int func(lua_State *L)
 	}
 }
 
+#ifdef TEST_COROUTINE 
 int main(int argc, char* const argv[])
+#else 
+int test(int argc, char* const argv[])
+#endif 
 {
 
 	lua_State *L = luaL_newstate();
